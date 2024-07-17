@@ -26,6 +26,8 @@ public class User {
     @Column(nullable = false)
     private String password;
     //relacion entre las dos tablas
+    //fetch = FetchType.EAGER ->
+    // Especifica que los roles deben ser cargados inmediatamente junto con la entidad User
     @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     @JoinTable(
             name = "users_roles",
